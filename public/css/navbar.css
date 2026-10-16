@@ -1,0 +1,135 @@
+/* ============================================= */
+/* SILUA MODERN NAVBAR - EARTHY THEME            */
+/* ============================================= */
+
+#navbar { transition: all 0.3s ease; }
+
+.silua-logo-box {
+    /* Menggunakan Cokelat Tua #1B0C0C */
+    background-color: var(--silua-grey1) !important;
+    padding: 15px 15px 30px 15px;
+    border-radius: 0 0 35px 35px;
+    margin-top: -20px;
+    transition: 0.3s;
+}
+
+.silua-nav-pill, .silua-action-pill {
+    /* Menggunakan Hijau Gelap #313E17 dengan transparansi untuk efek blur */
+    background-color: var(--silua-grey1) !important; 
+    padding: 6px;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.silua-nav-item {
+    color: white !important;
+    text-decoration: none !important;
+    padding: 10px 25px;
+    border-radius: 50px;
+    font-size: 14px;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+/* --- STYLE MENU AKTIF (PILL KUNING) --- */
+.active-pill {
+    /* Menggunakan Kuning Cerah #FFDE42 */
+    background-color: var(--orange-brand) !important;
+    /* Agar teks terbaca di atas kuning, warna teks diubah ke Cokelat Tua */
+    color: var(--navy-dark) !important;
+    font-weight: 800;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+#navbar.scrolled .silua-logo-box { padding-top: 5px; padding-bottom: 15px; }
+
+
+
+/* Container Kapsul Kanan */
+.silua-action-pill {
+    background-color: var(--navy-dark) !important;
+    padding: 8px 20px !important;
+    border-radius: 50px !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 15px !important;
+    min-height: 48px;
+}
+
+/* Garis Pembatas */
+.pill-divider {
+    width: 1px;
+    height: 22px;
+    background-color: rgba(248, 241, 241, 0.2);
+    margin: 0 5px;
+}
+
+/* Info Profil (Nama & ID) */
+.user-profile-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: left;
+    line-height: 1.2;
+}
+
+.user-name {
+    font-size: 12px;
+    font-weight: 700;
+    margin: 0;
+    white-space: nowrap;
+    color: white !important;
+}
+
+.user-id {
+    font-size: 9px;
+    font-weight: 800;
+    /* ID menggunakan warna Kuning #FFDE42 */
+    color: var(--orange-brand);
+    margin: 0;
+    text-transform: uppercase;
+}
+
+/* Logout Button Reset */
+.logout-icon-btn {
+    background: transparent;
+    border: none;
+    padding: 0;
+    margin: 0;
+    color: white;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    transition: 0.3s;
+}
+
+.logout-icon-btn:hover {
+    color: var(--orange-brand);
+}
+
+/* Badge Keranjang */
+.cart-badge-nav {
+    position: absolute;
+    top: -6px;
+    right: -8px;
+    background-color: var(--orange-brand); /* Kuning #FFDE42 */
+    color: var(--navy-dark); /* Teks Cokelat Tua agar kontras */
+    font-size: 9px;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 900;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+.nav-icon-link, .logout-icon-btn {
+    color: white !important;
+    display: flex;
+    align-items: center;
+}

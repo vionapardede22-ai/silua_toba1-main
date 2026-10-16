@@ -1,0 +1,64 @@
+/* ============================================= */
+/* 0. BRAND COLORS & GLOBAL RESET (NEW PALETTE)  */
+/* ============================================= */
+:root {
+    --bg-light: #ffffff;     /* Kuning Cerah (rgb 255, 222, 66) */
+    --gray-soft: #48A111;    /* Hijau Zaitun/Olive (rgb 76, 92, 45) */
+    --navy-dark: #25671E;    /* Hitam Cokelat Tua (rgb 27, 12, 12) */
+    --orange-brand: #F2B50B; /* Kuning sebagai Aksen Utama */
+    --silua-grey: #48A111;   /* Hijau Gelap (rgb 49, 62, 23) */
+    --silua-grey1: #25671E;  /* Warna Paling Gelap */
+}
+
+body {
+    background-color: var(--bg-light);
+    color: var(--navy-dark);
+    margin: 0; padding: 0;
+    overflow-x: hidden;
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* ============================================= */
+/* UNIFIED ICON CONTROL (Pusat Kendali Ikon)     */
+/* ============================================= */
+
+/* 1. Standarisasi Ukuran & Garis Ikon Global */
+svg.lucide, 
+i[data-lucide], 
+[data-lucide] { 
+    width: 20px !important; 
+    height: 20px !important; 
+    display: inline-block !important;
+    stroke-width: 2.5px !important;
+    stroke: currentColor; 
+    fill: none;
+    vertical-align: middle;
+}
+
+/* 2. PAKSA WARNA PUTIH UNTUK IKON DI KONTEKS GELAP */
+/* Menggunakan kontras putih agar terlihat di atas warna Hijau Gelap/Cokelat Tua */
+.silua-action-pill svg,
+.silua-action-pill i,
+.btn-icon-navy svg,
+.btn-icon-orange svg,
+.btn-navy-v2 svg,
+.btn-orange-v2 svg,
+.btn-order-giant svg,
+.logout-icon-btn svg {
+    color: #ffffff !important;
+    stroke: #ffffff !important;
+}
+
+/* 3. PAKSA WARNA TEKS DI KAPSUL NAVBAR KANAN */
+.silua-action-pill,
+.user-name,
+.pill-divider {
+    color: #ffffff !important;
+}
+
+/* 4. Khusus Ikon WA di Pojok Kanan Bawah */
+.wa-fab-container svg {
+    width: 30px !important;
+    height: 30px !important;
+    color: white !important;
+}

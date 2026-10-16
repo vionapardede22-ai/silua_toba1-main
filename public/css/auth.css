@@ -1,0 +1,135 @@
+/* ==========================================================================
+   [04] AUTH & PORTAL CARDS - EARTHY THEME (REFINED)
+   ========================================================================== */
+
+/* Wrapper Latar Belakang */
+.auth-page-bg {
+    background-color: var(--bg-light) !important; /* Sekarang #FFDE42 (Kuning) */
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 20px;
+    position: relative;
+    overflow-y: auto;
+}
+
+/* Kartu Putih Utama */
+.auth-card {
+    background-color: #ffffff !important;
+    border-radius: 2.5rem !important;
+    /* Shadow menggunakan tone Cokelat Tua agar lebih natural */
+    box-shadow: 0 30px 60px -12px rgba(27, 12, 12, 0.15) !important; 
+    padding: 3.5rem !important;
+    width: 100%;
+    max-width: 450px;
+    text-align: center;
+    position: relative;
+    z-index: 10;
+    border: 1px solid rgba(255, 255, 255, 0.8);
+}
+
+/* Judul & Teks */
+.auth-title {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 900;
+    letter-spacing: 0.15em;
+    color: var(--navy-dark); /* #1B0C0C (Cokelat Tua) */
+}
+
+.auth-subtitle {
+    font-size: 10px;
+    font-weight: 800;
+    color: var(--gray-soft); /* #4C5C2D (Hijau Zaitun) */
+    letter-spacing: 0.3em;
+    margin-bottom: 2.5rem;
+}
+
+/* Kolom Input */
+.silua-input {
+    width: 100% !important;
+    display: block !important;
+    padding: 1.1rem 1.6rem !important;
+    margin-bottom: 15px;
+    border-radius: 1.2rem !important;
+    border: 2px solid #EEEEEE !important; /* Abu-abu terang untuk border default */
+    background-color: #f9fafb !important;
+    color: var(--navy-dark) !important;
+    font-weight: 600;
+    font-size: 14px;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+.silua-input:focus {
+    /* Fokus menggunakan warna Hijau Zaitun agar tidak tabrakan dengan BG Kuning */
+    border-color: var(--gray-soft) !important; 
+    background-color: #ffffff !important;
+    box-shadow: 0 0 0 4px rgba(76, 92, 45, 0.1) !important;
+}
+
+/* Tombol Ikonik (Bulat Kotak) */
+.btn-icon-navy, .btn-icon-orange {
+    width: 85px !important;
+    height: 85px !important;
+    border-radius: 1.8rem !important;
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    margin: 10px auto !important;
+    border: none !important;
+    cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    color: white !important;
+}
+
+.btn-icon-navy { 
+    background-color: var(--navy-dark) !important; /* Cokelat Tua */
+    box-shadow: 0 10px 20px rgba(27, 12, 12, 0.3);
+}
+
+.btn-icon-orange { 
+    /* Karena BG Kuning, tombol "Orange" kita ubah ke Hijau Zaitun agar terlihat */
+    background-color: var(--gray-soft) !important; 
+    box-shadow: 0 10px 20px rgba(76, 92, 45, 0.3);
+}
+
+.btn-icon-navy:hover, .btn-icon-orange:hover {
+    transform: scale(1.1) rotate(5deg);
+}
+
+/* Tombol Kembali */
+.back-btn {
+    position: absolute;
+    top: 40px;
+    left: 40px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--navy-dark) !important; /* Cokelat Tua */
+    text-decoration: none !important;
+    font-weight: 800;
+    font-size: 13px;
+    text-transform: uppercase;
+    z-index: 100;
+    transition: 0.3s;
+}
+
+.back-btn:hover {
+    color: var(--gray-soft) !important; /* Berubah ke Hijau Zaitun saat hover */
+    transform: translateX(-5px);
+}
+
+/* Responsif Layar Kecil */
+@media (max-width: 640px) {
+    .auth-card { padding: 2.5rem 1.5rem !important; }
+    .back-btn { top: 20px; left: 20px; }
+}
+
+/* Ikon Lucide Control */
+.auth-card svg, .auth-card i {
+    width: 32px !important;
+    height: 32px !important;
+    stroke-width: 2.5px;
+}

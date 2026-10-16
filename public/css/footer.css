@@ -1,0 +1,178 @@
+/* ==========================================================================
+   [06] SILUA PREMIUM FOOTER STYLES - EARTHY THEME (REFINED)
+   ========================================================================== */
+
+.silua-footer {
+    background-color: var(--navy-dark); /* #1B0C0C (Cokelat Tua) */
+    color: #FFFFFF;
+    font-family: 'Montserrat', sans-serif;
+    border-top: 5px solid var(--orange-brand); /* Garis atas Kuning Mewah #FFDE42 */
+}
+
+/* --- KOLOM 1 --- */
+.footer-brand {
+    font-family: 'Lora', serif;
+    font-size: 2.2rem;
+    font-weight: 800;
+    color: var(--orange-brand); /* Kuning #FFDE42 */
+    letter-spacing: 2px;
+    margin: 0;
+}
+
+.footer-tagline {
+    font-family: 'Lora', serif;
+    font-size: 1rem;
+    font-style: italic;
+    opacity: 0.9;
+    margin-top: 5px;
+    color: #FFFFFF;
+}
+
+.footer-desc {
+    font-size: 14px;
+    line-height: 1.8;
+    opacity: 0.7;
+    margin-top: 20px;
+    color: #EAEFEF;
+}
+
+.footer-links-inline {
+    display: flex;
+    gap: 12px;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-top: 25px;
+}
+
+.footer-links-inline a {
+    color: white;
+    text-decoration: none;
+    opacity: 0.5;
+    transition: 0.3s;
+}
+
+.footer-links-inline a:hover {
+    opacity: 1;
+    color: var(--orange-brand);
+}
+
+.footer-links-inline .sep { opacity: 0.2; }
+
+/* --- DIVIDER LINE --- */
+.footer-divider-line {
+    width: 1px;
+    height: 180px;
+    background: linear-gradient(transparent, rgba(255,255,255,0.2), transparent);
+    position: relative;
+}
+
+.footer-divider-line::after {
+    content: '◈';
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    color: var(--orange-brand); /* Kuning #FFDE42 */
+    background-color: var(--navy-dark); /* Cokelat Tua */
+    padding: 10px 0;
+}
+
+/* --- HEADINGS --- */
+.footer-heading {
+    font-family: 'Lora', serif;
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--orange-brand);
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.footer-heading::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0;
+    width: 40px; height: 2px;
+    background-color: var(--orange-brand);
+}
+
+/* --- ICON LINKS & ANIMATION --- */
+.footer-icon-link {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    color: white;
+    text-decoration: none !important;
+    font-size: 14px;
+    font-weight: 500;
+    transition: 0.3s ease;
+}
+
+.icon-circle {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.05);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.4s ease;
+    border: 1px solid rgba(255,255,255,0.1);
+}
+
+.footer-icon-link:hover .icon-circle {
+    background-color: var(--orange-brand); /* Berubah Kuning */
+    color: var(--navy-dark) !important; /* Ikon berubah Cokelat saat hover */
+    transform: rotate(360deg);
+    box-shadow: 0 0 15px rgba(255, 222, 66, 0.4);
+}
+
+.footer-icon-link:hover span {
+    color: var(--orange-brand);
+    transform: translateX(5px);
+}
+
+.footer-icon-link span { transition: 0.3s; }
+
+/* --- HALAL BADGE --- */
+.halal-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 20px;
+    border: 1px solid rgba(255, 222, 66, 0.3); /* Border Kuning Tipis */
+    border-radius: 15px;
+    transition: 0.3s;
+}
+
+.halal-badge:hover {
+    border-color: var(--orange-brand);
+    background-color: rgba(255, 222, 66, 0.05);
+}
+
+.halal-badge span {
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    color: var(--orange-brand);
+}
+
+/* --- BOTTOM BAR --- */
+.footer-bottom {
+    background-color: #0d0606; /* Cokelat yang jauh lebih pekat/hitam */
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.pengaduan {
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--orange-brand);
+    text-transform: uppercase;
+}
+
+.copyright {
+    font-size: 10px;
+    opacity: 0.5;
+    letter-spacing: 0.5px;
+    color: #FFFFFF;
+}

@@ -1,0 +1,161 @@
+/* ============================================= */
+/* SIDEBAR ADMIN - EARTHY THEME                  */
+/* ============================================= */
+
+
+/* === ROOT SIDEBAR === */
+.silua-admin-sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+
+    width: 280px;
+    height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+
+    background-color: var(--navy-dark);
+    box-shadow: 10px 0 30px rgba(27, 12, 12, 0.2);
+}
+
+
+/* === HEADER === */
+.sidebar-header {
+    padding: 40px 20px;
+    text-align: center;
+
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.sidebar-logo {
+    font-size: 1.5rem;
+    font-weight: 900;
+    letter-spacing: 2px;
+    color: #ffffff;
+}
+
+.sidebar-logo span {
+    color: var(--orange-brand);
+}
+
+
+/* === NAV CONTAINER === */
+.sidebar-nav {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    padding-top: 10px;
+}
+
+
+/* === GROUP LABEL === */
+.nav-group-label {
+    margin: 20px 25px 5px;
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+
+    color: rgba(255, 255, 255, 0.4);
+}
+
+
+/* === NAV ITEM === */
+.nav-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+
+    margin: 6px 15px;
+    padding: 12px 18px;
+
+    border-radius: 14px;
+
+    color: rgba(255, 255, 255, 0.65);
+    font-weight: 600;
+    text-decoration: none !important;
+
+    transition: all 0.25s ease;
+}
+
+.nav-item i {
+    width: 20px;
+    height: 20px;
+}
+
+
+/* Hover effect */
+.nav-item:hover {
+    color: #ffffff;
+    background-color: rgba(255, 255, 255, 0.06);
+    transform: translateX(4px);
+}
+
+
+/* === ACTIVE STATE === */
+.nav-item.active {
+    background-color: var(--orange-brand) !important;
+    color: var(--navy-dark) !important;
+
+    font-weight: 800;
+
+    box-shadow: 0 10px 20px rgba(255, 222, 66, 0.25);
+}
+
+.nav-item.active i {
+    stroke: var(--navy-dark);
+}
+
+
+/* === DIVIDER === */
+.sidebar-divider {
+    height: 1px;
+    margin: 20px 25px;
+    background-color: rgba(255, 255, 255, 0.08);
+}
+
+
+/* === LOGOUT BUTTON === */
+.logout-pill {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    width: 100%;
+    padding: 14px 20px;
+
+    border: none;
+    border-radius: 14px;
+
+    font-size: 14px;
+    font-weight: 700;
+
+    cursor: pointer;
+    transition: all 0.3s ease;
+
+    background-color: rgba(255, 71, 71, 0.1);
+    color: #ff5c5c;
+}
+
+.logout-pill i {
+    width: 20px;
+    height: 20px;
+}
+
+
+/* Hover logout */
+.logout-pill:hover {
+    background-color: #ff4747;
+    color: #ffffff !important;
+
+    box-shadow: 0 8px 20px rgba(255, 71, 71, 0.3);
+    transform: translateY(-2px);
+}
+
+
+/* === UTILITIES === */
+.mt-auto {
+    margin-top: auto;
+}

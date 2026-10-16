@@ -1,0 +1,195 @@
+/* ==========================================================================
+   SILUA GALLERY SECTION - EARTHY X3 STYLE (REFINED)
+   ========================================================================== */
+
+.silua-gallery-section {
+    padding: 160px 20px 100px;
+    background-color: var(--bg-light); /* #FFDE42 (Kuning Cerah) */
+}
+
+.gallery-main-title {
+    font-family: 'Lora', serif;
+    font-size: 3rem;
+    font-weight: 900;
+    color: var(--navy-dark); /* #1B0C0C (Cokelat Tua) */
+    letter-spacing: -1px;
+    font-style: italic;
+}
+
+.gallery-subtitle {
+    font-family: 'Montserrat', sans-serif;
+    color: var(--gray-soft); /* #4C5C2D (Hijau Zaitun) */
+    font-size: 14px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-top: 10px;
+}
+
+/* --- THE X3 CARD GRID --- */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 40px;
+    margin-top: 50px;
+}
+
+.x3-card {
+    background: white;
+    border-radius: 12px;
+    /* Shadow menggunakan warna Cokelat Tua samar */
+    box-shadow: 0 10px 30px rgba(27, 12, 12, 0.08); 
+    overflow: hidden;
+    cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    border: 1px solid rgba(76, 92, 45, 0.1); /* Border Hijau Zaitun sangat tipis */
+    display: flex;
+    flex-direction: column;
+}
+
+.x3-card:hover {
+    box-shadow: 0 25px 50px rgba(27, 12, 12, 0.15);
+    transform: translateY(-10px);
+}
+
+/* Area Media (Foto) */
+.x3-media {
+    width: 100%;
+    height: 240px;
+    overflow: hidden;
+    background: var(--navy-dark); /* Dasar cokelat tua jika gambar loading */
+}
+
+.x3-media img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.8s ease;
+}
+
+.x3-card:hover .x3-media img {
+    transform: scale(1.1);
+}
+
+/* ==========================================================================
+   AREA KONTEN (Pemisahan Judul & Deskripsi)
+   ========================================================================== */
+.x3-content {
+    padding: 30px 25px;
+    text-align: center;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* Judul: Cokelat Tua */
+.x3-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 18px;
+    font-weight: 800;
+    color: var(--navy-dark);
+    margin-bottom: 12px;
+    line-height: 1.3;
+}
+
+/* Garis Pembatas (Divider) - Menggunakan Hijau Zaitun agar kontras di kartu putih */
+.x3-divider {
+    width: 30px;
+    height: 2px;
+    background-color: var(--gray-soft); 
+    margin: 0 auto 15px auto;
+    border-radius: 2px;
+    transition: width 0.3s ease;
+}
+
+.x3-card:hover .x3-divider {
+    width: 60px;
+    background-color: var(--navy-dark);
+}
+
+/* Deskripsi: Hijau Zaitun redup */
+.x3-description {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 13px;
+    font-weight: 400;
+    color: var(--gray-soft);
+    opacity: 0.8;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+/* Tanggal: Cokelat Tua Kecil */
+.x3-date {
+    font-size: 10px;
+    color: var(--navy-dark);
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin-top: auto;
+    opacity: 0.6;
+}
+
+/* ==========================================================================
+   LIGHTBOX VIEWER - Menggunakan Cokelat Tua sebagai Background
+   ========================================================================== */
+.lightbox-overlay {
+    position: fixed; 
+    inset: 0; 
+    background: rgba(27, 12, 12, 0.98); /* Cokelat Tua Pekat */
+    z-index: 10000; 
+    display: none; 
+    align-items: center; 
+    justify-content: center;
+    backdrop-filter: blur(15px);
+}
+
+.lightbox-overlay.active { display: flex; }
+
+.close-x { 
+    position: absolute; 
+    top: 30px; 
+    right: 40px; 
+    font-size: 50px; 
+    color: var(--orange-brand); /* Kuning Cerah */
+    border: none; 
+    background: transparent; 
+    cursor: pointer; 
+    transition: 0.3s;
+}
+
+.close-x:hover { 
+    color: white; 
+    transform: rotate(90deg); 
+}
+
+.lightbox-inner {
+    text-align: center;
+    max-width: 90vw;
+}
+
+.lightbox-inner img {
+    max-height: 75vh;
+    border-radius: 12px;
+    box-shadow: 0 40px 80px rgba(0,0,0,0.6);
+    border: 4px solid white;
+}
+
+.lightbox-caption-box {
+    margin-top: 25px;
+    color: white;
+}
+
+.lightbox-caption-box h3 {
+    font-family: 'Lora', serif;
+    font-size: 1.8rem;
+    font-style: italic;
+    color: var(--orange-brand); /* Kuning Cerah */
+}
+
+.lightbox-caption-box p {
+    font-size: 14px;
+    opacity: 0.8;
+    margin-top: 5px;
+    color: var(--bg-light); /* Kuning Sangat Muda */
+}

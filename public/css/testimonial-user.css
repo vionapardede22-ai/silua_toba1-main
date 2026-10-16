@@ -1,0 +1,136 @@
+/* ==========================================================================
+   [07] TESTIMONIAL SECTION - EARTHY THEME
+   ========================================================================== */
+
+/* --- SECTION UTAMA --- */
+.silua-testi-section {
+    padding: 160px 20px 100px;
+    /* Menggunakan Kuning Cerah #FFDE42 */
+    background-color: var(--bg-light); 
+}
+
+.testi-main-title {
+    font-family: 'Lora', serif;
+    font-size: 3.5rem;
+    font-weight: 800;
+    /* Menggunakan Cokelat Tua #1B0C0C */
+    color: var(--navy-dark); 
+}
+
+.testi-subtitle {
+    /* Menggunakan Hijau Zaitun #4C5C2D agar lebih soft */
+    color: var(--gray-soft); 
+    font-size: 14px;
+    font-weight: 600;
+    margin-top: 15px;
+}
+
+/* --- KARTU TESTIMONI --- */
+.testi-card {
+    background: white;
+    padding: 60px 40px 40px;
+    border-radius: 15px;
+    /* Shadow menggunakan tone Cokelat Tua samar */
+    box-shadow: 0 20px 50px rgba(27, 12, 12, 0.08); 
+    position: relative;
+    transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    /* Memastikan teks pecah jika terlalu panjang */
+    word-break: break-word;
+    overflow-wrap: break-word;
+}
+
+.testi-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 30px 60px rgba(27, 12, 12, 0.12);
+}
+
+.testi-avatar {
+    width: 85px;
+    height: 85px;
+    position: absolute;
+    top: -42px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 50%;
+    overflow: hidden;
+    /* Border Putih dengan Ring Cokelat Tua tipis */
+    border: 5px solid white;
+    box-shadow: 0 10px 20px rgba(27, 12, 12, 0.15);
+    background-color: var(--navy-dark);
+}
+
+.testi-avatar img { width: 100%; height: 100%; object-fit: cover; }
+
+.testi-user-name {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 800;
+    color: var(--navy-dark);
+    margin-bottom: 15px;
+    font-size: 1.1rem;
+    text-transform: capitalize;
+}
+
+.testi-message {
+    /* Menggunakan Hijau Gelap agar tidak terlalu tajam tapi tetap terbaca */
+    color: var(--silua-grey); 
+    font-size: 14px;
+    line-height: 1.8;
+    font-style: italic;
+}
+
+/* --- CRUD LINKS (USER ONLY) --- */
+.testi-actions {
+    margin-top: 25px;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    border-top: 1px solid #f1f5f9;
+    padding-top: 15px;
+}
+
+.edit-link { 
+    color: var(--gray-soft); 
+    font-weight: 800; 
+    font-size: 10px; 
+    text-transform: uppercase; 
+    border: none; 
+    background: none; 
+    cursor: pointer; 
+    text-decoration: underline; 
+    transition: 0.3s;
+}
+
+.edit-link:hover { color: var(--navy-dark); }
+
+.delete-link { 
+    color: #ff4d4d; 
+    font-weight: 800; 
+    font-size: 10px; 
+    text-transform: uppercase; 
+    border: none; 
+    background: none; 
+    cursor: pointer; 
+    text-decoration: underline; 
+}
+
+/* Tombol Simpan/Kirim Kecil */
+.btn-orange-tiny {
+    /* Background Kuning Cerah */
+    background: var(--orange-brand); 
+    /* Teks Cokelat Tua agar kontras di atas kuning */
+    color: var(--navy-dark); 
+    font-size: 10px;
+    padding: 8px 20px;
+    border-radius: 8px;
+    font-weight: 800;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(255, 222, 66, 0.3);
+    transition: 0.3s;
+}
+
+.btn-orange-tiny:hover {
+    background: var(--navy-dark);
+    color: white;
+    transform: scale(1.05);
+}

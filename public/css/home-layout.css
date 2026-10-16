@@ -1,0 +1,278 @@
+/* ==========================================================================
+   1. HERO SLIDER SECTION (SUBWAY CONCEPT - STAGGERED TEXT)
+   ========================================================================== */
+.hero-slider {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    background-color: var(--navy-dark);
+}
+
+.slide {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 1s ease-in-out;
+    display: flex;
+    align-items: center;
+}
+
+.slide.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.slide-bg {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+}
+
+.slide-bg img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.slide::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg, rgba(27, 12, 12, 0.8) 0%, transparent 60%);
+    z-index: 2;
+}
+
+.slide-content {
+    position: relative;
+    z-index: 10;
+    padding-left: 8%;
+    max-width: 700px;
+    text-align: left;
+}
+
+/* Animasi Teks Muncul Berurutan */
+.animate-text {
+    opacity: 0;
+    transform: translateX(-40px);
+    transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    color: white;
+    display: block;
+}
+
+.slide.active .animate-text {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.delay-1 { transition-delay: 0.2s; } /* Judul */
+.delay-2 { transition-delay: 0.4s; } /* Deskripsi */
+.delay-3 { transition-delay: 0.6s; } /* Tombol */
+
+.slide-content span {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    font-size: 0.85rem;
+    color: var(--bg-light); /* Kuning #FFDE42 */
+}
+
+.slide-content h1 {
+    font-family: 'Lora', serif;
+    font-size: clamp(3rem, 6vw, 5.5rem);
+    font-weight: 900;
+    line-height: 1.1;
+    margin: 15px 0;
+    font-style: italic;
+    color: white;
+}
+
+.slide-content h1 span {
+    color: transparent;
+    -webkit-text-stroke: 1.5px white;
+}
+
+.slide-content p {
+    font-size: 1.2rem;
+    max-width: 500px;
+    opacity: 0.9;
+    line-height: 1.6;
+}
+
+.btn-slider-primary {
+    display: inline-flex;
+    align-items: center;
+    margin-top: 35px;
+    padding: 18px 45px;
+    background-color: var(--orange-brand);
+    color: var(--navy-dark) !important;
+    text-decoration: none !important;
+    border-radius: 50px;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    transition: 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+.btn-slider-primary:hover {
+    background-color: white;
+    transform: translateY(-5px);
+}
+
+/* Hero Dots */
+.slider-dots {
+    position: absolute;
+    bottom: 50px;
+    left: 8%;
+    z-index: 20;
+    display: flex;
+    gap: 12px;
+}
+
+.dot-hero {
+    width: 35px;
+    height: 5px;
+    background: rgba(255,255,255,0.3);
+    border-radius: 2px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.dot-hero.active {
+    background: var(--orange-brand);
+    width: 60px;
+}
+
+/* ==========================================================================
+   2. PRODUCT CAROUSEL (SEAMLESS INFINITE - SUBWAY STYLE)
+   ========================================================================== */
+.silua-carousel-section {
+    background-color: var(--bg-light) !important; /* Kuning #FFDE42 */
+    padding: 100px 0;
+    width: 100%;
+    overflow: hidden;
+}
+
+.carousel-hashtag {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 900;
+    font-size: 2.2rem;
+    color: var(--navy-dark);
+    letter-spacing: 1px;
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.subway-carousel-wrapper {
+    position: relative;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.subway-carousel-container {
+    width: 100%;
+    max-width: 1400px;
+    padding: 40px 0;
+}
+
+.subway-carousel-track {
+    display: flex;
+    gap: 20px;
+    /* PENTING: Transisi ini diatur oleh JS agar lompatan seamless bekerja */
+    transition: transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+    will-change: transform;
+}
+
+/* --- ITEM CAROUSEL --- */
+.subway-item {
+    min-width: 350px;
+    max-width: 350px;
+    transition: all 0.6s ease;
+    /* Efek untuk samping: mengecil & buram */
+    transform: scale(0.8);
+    opacity: 0.4;
+    filter: blur(2px);
+}
+
+/* KONDISI AKTIF (TENGAH) */
+.subway-item.active {
+    transform: scale(1.1); /* Membesar */
+    opacity: 1;
+    filter: blur(0);
+    z-index: 10;
+}
+
+.subway-card {
+    background: #25671E; /* Hijau Subway */
+    padding: 12px;
+    border-radius: 12px;
+    box-shadow: 0 20px 40px rgba(27, 12, 12, 0.15);
+    border: 1px solid rgba(255,255,255,0.1);
+}
+
+.subway-card img {
+    width: 100%;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+    display: block;
+    border-radius: 4px;
+}
+
+/* --- NAVIGASI --- */
+.subway-nav-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 60px;
+    height: 60px;
+    background-color: rgba(27, 12, 12, 0.9);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 50;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.3s;
+}
+
+.subway-nav-btn.prev { left: 5%; }
+.subway-nav-btn.next { right: 5%; }
+.subway-nav-btn:hover { background-color: var(--navy-dark); transform: translateY(-50%) scale(1.1); }
+
+/* --- DOTS --- */
+.subway-pagination {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 50px;
+}
+
+.subway-dot {
+    width: 10px;
+    height: 10px;
+    background-color: white;
+    border: 2px solid var(--navy-dark);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.subway-dot.active {
+    background-color: var(--navy-dark);
+    width: 35px; /* Menjadi kapsul horizontal */
+    border-radius: 10px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .subway-item { min-width: 260px; max-width: 260px; }
+    .carousel-hashtag { font-size: 1.5rem; }
+    .subway-nav-btn { width: 45px; height: 45px; }
+}

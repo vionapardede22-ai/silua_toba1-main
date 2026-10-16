@@ -1,0 +1,326 @@
+/* ==========================================================================
+   SILUA PRODUCT PAGE - USER SIDE (EARTHY THEME)
+   ========================================================================== */
+
+/* --- BASE STYLING --- */
+.silua-products-section {
+    padding: 160px 20px 100px;
+    background-color: var(--bg-light); /* #FFDE42 (Kuning Cerah) */
+    min-height: 100vh;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Pseudo-element untuk cahaya di belakang produk */
+.silua-products-section::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 40%;
+    /* Gradasi Hijau Zaitun tipis ke transparan */
+    background: linear-gradient(to bottom, rgba(76, 92, 45, 0.08), transparent);
+    pointer-events: none;
+}
+
+.products-container {
+    max-width: 1250px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 10;
+}
+
+/* ============================================= */
+/* HEADER STYLING */
+/* ============================================= */
+.products-header-box {
+    margin-bottom: 50px;
+    text-align: center;
+}
+
+@media (min-width: 768px) {
+    .products-header-box { text-align: left; }
+}
+
+.products-subtitle {
+    display: block;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 800;
+    /* Menggunakan Hijau Zaitun agar kontras di atas Kuning */
+    color: var(--gray-soft); 
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    margin-bottom: 5px;
+}
+
+.products-title {
+    font-family: 'Lora', serif;
+    font-size: clamp(2.5rem, 5vw, 3.8rem);
+    /* Menggunakan Cokelat Tua #1B0C0C */
+    color: var(--navy-dark); 
+    font-weight: 900;
+    font-style: italic;
+    letter-spacing: -1.5px;
+    line-height: 1.1;
+}
+
+/* ============================================= */
+/* SEARCH BAR */
+/* ============================================= */
+.search-input-v2 {
+    width: 100%;
+    padding: 18px 25px 18px 60px;
+    border-radius: 25px;
+    border: 2px solid #ffffff;
+    background-color: white;
+    /* Shadow menggunakan tone Cokelat Tua */
+    box-shadow: 0 10px 30px rgba(27, 12, 12, 0.05);
+    font-weight: 600;
+    color: var(--navy-dark);
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+.search-input-v2:focus {
+    /* Fokus berubah menjadi Hijau Zaitun */
+    border-color: var(--gray-soft);
+    box-shadow: 0 15px 40px rgba(76, 92, 45, 0.15);
+    transform: translateY(-3px);
+}
+
+.search-icon-v2 {
+    position: absolute;
+    top: 50%;
+    left: 22px;
+    transform: translateY(-50%);
+    color: var(--gray-soft);
+    transition: 0.3s;
+}
+
+/* ============================================= */
+/* PRODUCT GRID & CARDS */
+/* ============================================= */
+.product-premium-card {
+    background: #ffffff;
+    border-radius: 3.5rem;
+    padding: 15px;
+    transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    position: relative;
+    border: 1px solid rgba(0,0,0,0.02);
+    box-shadow: 0 10px 30px rgba(27, 12, 12, 0.04);
+}
+
+.product-premium-card:hover {
+    transform: translateY(-15px);
+    box-shadow: 0 30px 60px rgba(27, 12, 12, 0.12);
+}
+
+.product-media {
+    position: relative;
+    width: 100%;
+    height: 250px;
+    border-radius: 2.8rem;
+    overflow: hidden;
+}
+
+.product-media img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.8s ease;
+}
+
+.product-premium-card:hover .product-media img {
+    transform: scale(1.15);
+}
+
+/* Wishlist Heart */
+.wish-btn-v2 {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(10px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--navy-dark);
+    transition: 0.3s;
+    z-index: 5;
+    border: none;
+}
+
+.wish-btn-v2:hover, .wish-btn-v2.active {
+    background: #FF4B4B !important;
+    color: white !important;
+    transform: scale(1.1);
+}
+
+.product-info-v2 { padding: 25px 10px 10px; text-align: center; }
+
+.product-name-v2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 800;
+    color: var(--navy-dark); /* Cokelat Tua */
+    margin-bottom: 5px;
+}
+
+.product-cat-v2 {
+    font-size: 10px;
+    font-weight: 700;
+    color: var(--gray-soft); /* Hijau Zaitun */
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+/* Baris Harga & Tombol Aksi */
+.product-footer-v2 {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 20px;
+    padding: 15px 20px;
+    border-radius: 2.2rem;
+    background: #F8FAFC;
+}
+
+.price-value-v2 {
+    font-size: 1.1rem;
+    font-weight: 900;
+    color: var(--navy-dark);
+}
+
+/* ============================================= */
+/* ANIMASI TOMBOL TROLI (SHOPPING CART)          */
+/* ============================================= */
+
+.buy-btn-v2 {
+    width: 50px;
+    height: 50px;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    z-index: 2;
+}
+
+/* Animasi Muncul saat Kartu Produk tampil (Show) */
+.product-premium-card.show .buy-btn-v2 {
+    animation: buttonPopIn 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+    animation-delay: 0.5s;
+    opacity: 0;
+}
+
+/* Denyut Cokelat Tua (Troli) */
+.btn-navy-v2 {
+    background: var(--navy-dark) !important;
+    animation: buttonPulseEarthyNavy 3s infinite;
+}
+
+/* Denyut Hijau Zaitun (Guest) */
+.btn-orange-v2 {
+    background: var(--gray-soft) !important;
+    animation: buttonPulseEarthyZaitun 3s infinite;
+}
+
+.buy-btn-v2:hover {
+    transform: translateY(-5px) scale(1.1);
+    box-shadow: 0 10px 25px rgba(27, 12, 12, 0.2);
+}
+
+/* ============================================= */
+/* KEYFRAMES PERGERAKAN TOMBOL */
+/* ============================================= */
+
+@keyframes buttonPopIn {
+    0% { opacity: 0; transform: scale(0) rotate(-45deg); }
+    100% { opacity: 1; transform: scale(1) rotate(0); }
+}
+
+@keyframes buttonPulseEarthyNavy {
+    0% { box-shadow: 0 0 0 0 rgba(27, 12, 12, 0.4); }
+    70% { box-shadow: 0 0 0 15px rgba(27, 12, 12, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(27, 12, 12, 0); }
+}
+
+@keyframes buttonPulseEarthyZaitun {
+    0% { box-shadow: 0 0 0 0 rgba(76, 92, 45, 0.4); }
+    70% { box-shadow: 0 0 0 15px rgba(76, 92, 45, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(76, 92, 45, 0); }
+}
+
+/* ============================================= */
+/* MODAL DETAIL & ORDER (POP-UP)                 */
+/* ============================================= */
+.product-modal {
+    position: fixed; inset: 0; z-index: 10000;
+    display: none; align-items: center; justify-content: center;
+    /* Overlay menggunakan Cokelat Tua transparan */
+    background: rgba(27, 12, 12, 0.6); 
+    backdrop-filter: blur(12px);
+    padding: 20px;
+}
+
+.product-modal.active { display: flex; animation: modalIn 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275); }
+
+.modal-content {
+    background: white; width: 100%; max-width: 1050px;
+    border-radius: 4rem; padding: 60px 50px; position: relative;
+    max-height: 92vh; overflow-y: auto;
+    box-shadow: 0 30px 60px -12px rgba(27, 12, 12, 0.2) !important;
+}
+
+/* Tombol Pesan Raksasa (Cokelat Tua) */
+.btn-order-giant {
+    background-color: var(--navy-dark) !important;
+    color: white !important;
+    padding: 22px 45px;
+    border-radius: 25px;
+    font-weight: 900;
+    font-size: 16px;
+    letter-spacing: 2px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s;
+    box-shadow: 0 15px 35px rgba(27, 12, 12, 0.25);
+    width: 100%;
+}
+
+.btn-order-giant:hover {
+    background-color: var(--gray-soft) !important; /* Hover ke Hijau Zaitun */
+    transform: translateY(-5px) scale(1.02);
+}
+
+/* ============================================= */
+/* REVIEW SYSTEM (ULASAN DINAMIS)                */
+/* ============================================= */
+.review-card-modern {
+    background-color: #F8FAFC;
+    border: 2px solid #EEEEEE;
+    padding: 30px;
+    border-radius: 2.5rem;
+    transition: 0.3s ease;
+}
+
+.review-card-modern:hover {
+    background-color: #ffffff;
+    /* Aksen border Kuning saat hover */
+    border-color: var(--bg-light); 
+    box-shadow: 0 15px 35px rgba(27, 12, 12, 0.05);
+    transform: translateY(-5px);
+}
+
+.stars-active { color: #fbbf24; }
